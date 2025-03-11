@@ -2,6 +2,7 @@ package org.galib.feedmenews.screens.detail
 
 import android.view.ViewGroup
 import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.rememberScrollState
@@ -21,9 +22,12 @@ actual fun CommonWebView(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT
                 )
+                webViewClient = WebViewClient()
+                settings.javaScriptEnabled = true
             }
         }, update = {
             it.loadUrl(mUrl)
         })
+
     }
 }

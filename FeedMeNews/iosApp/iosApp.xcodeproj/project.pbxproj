@@ -118,7 +118,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = orgName;
 				TargetAttributes = {
 					7555FF7A242A565900829871 = {
@@ -175,7 +175,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\ncd \"$SRCROOT/..\"\n./gradlew :composeApp:embedAndSignAppleFrameworkForXcode\n";
+			shellScript = "if [ \"YES\" = \"$OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED\" ]; then\n  echo \"Skipping Gradle build task invocation due to OVERRIDE_KOTLIN_BUILD_IDE_SUPPORTED environment variable set to \\\"YES\\\"\"\n  exit 0\nfi\nexport JAVA_HOME=/Applications/Android\\ Studio.app/Contents/jbr/Contents/Home/\nexport JDK_HOME=/Applications/Android\\ Studio.app/Contents/jbr/Contents/\ncd \"$SRCROOT/..\"\n./gradlew :composeApp:embedAndSignAppleFrameworkForXcode\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -197,6 +197,7 @@
 			baseConfigurationReference = AB3632DC29227652001CCB65 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -260,6 +261,7 @@
 			baseConfigurationReference = AB3632DC29227652001CCB65 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -319,7 +321,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "${TEAM_ID}";
+				DEVELOPMENT_TEAM = TP72NTS8QL;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -346,7 +348,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iosApp/Preview Content\"";
-				DEVELOPMENT_TEAM = "${TEAM_ID}";
+				DEVELOPMENT_TEAM = TP72NTS8QL;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
