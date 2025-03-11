@@ -6,7 +6,7 @@ import org.galib.feedmenews.data.MuseumApi
 import org.galib.feedmenews.data.MuseumRepository
 import org.galib.feedmenews.data.MuseumStorage
 import org.galib.feedmenews.screens.detail.DetailViewModel
-import org.galib.feedmenews.screens.list.ListViewModel
+import org.galib.feedmenews.screens.ListViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.http.ContentType

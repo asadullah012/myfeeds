@@ -1,4 +1,4 @@
-package org.galib.feedmenews.screens.list
+package org.galib.feedmenews.screens
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

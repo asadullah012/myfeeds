@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-    <string name="app_name">FeedMeNews</string>
+    <string name="app_name">My Feeds</string>
     <string name="label_title">Title</string>
     <string name="label_artist">Artist</string>
     <string name="label_date">Date</string>
