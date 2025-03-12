@@ -1,4 +1,4 @@
-package org.galib.feedmenews.navigation
+package org.galib.feedmenews.screens
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmarks
@@ -17,43 +17,38 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
+import org.galib.feedmenews.navigation.ForYouRoute
+import org.galib.feedmenews.navigation.HomeRoute
+import org.galib.feedmenews.navigation.InterestRoute
+import org.galib.feedmenews.navigation.SavedRoute
 
 
 @Composable
-fun MFNavigationBar(navController: NavController) {
+fun MFNavigationBar(navController: NavController, currentScreen:Int) {
     val selectedNavigationIndex = rememberSaveable {
-        mutableIntStateOf(0)
+        mutableIntStateOf(currentScreen)
     }
-
+    logd("Navigation","Selected index: ${selectedNavigationIndex.intValue}")
     val navigationItems = listOf(
         NavigationItem(
             title = "Home",
             icon = Icons.Default.Home,
-            navigate = {
-                navController.navigate(HomeRoute)
-            }
+            route = HomeRoute
         ),
         NavigationItem(
             title = "For You",
             icon = Icons.Default.Favorite,
-            navigate = {
-                navController.navigate(ForYouRoute)
-            }
+            route = ForYouRoute
         ),
         NavigationItem(
             title = "Interest",
             icon = Icons.Default.Interests,
-            navigate = {
-                navController.navigate(InterestRoute)
-            }
+            route = InterestRoute
         ),
         NavigationItem(
             title = "Saved",
             icon = Icons.Default.Bookmarks,
-            navigate = {
-                navController.navigate(SavedRoute)
-            }
-
+            route = SavedRoute
         )
     )
 
@@ -64,8 +59,9 @@ fun MFNavigationBar(navController: NavController) {
             NavigationBarItem(
                 selected = selectedNavigationIndex.intValue == index,
                 onClick = {
+                    logd("Navigation","Selected index: $index")
                     selectedNavigationIndex.intValue = index
-                    item.navigate()
+                    navController.navigate(item.route)
                 },
                 icon = {
                     Icon(imageVector = item.icon, contentDescription = item.title)
@@ -91,5 +87,5 @@ fun MFNavigationBar(navController: NavController) {
 data class NavigationItem(
     val title: String,
     val icon: ImageVector,
-    val navigate: () -> Unit,
+    val route: Any
 )

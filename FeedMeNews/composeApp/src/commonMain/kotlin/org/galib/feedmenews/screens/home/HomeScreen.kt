@@ -38,7 +38,7 @@ import coil3.compose.AsyncImage
 import feedmenews.composeapp.generated.resources.Res
 import feedmenews.composeapp.generated.resources.placeholder
 import org.galib.feedmenews.data.MuseumObject
-import org.galib.feedmenews.navigation.MFNavigationBar
+import org.galib.feedmenews.screens.MFNavigationBar
 import org.galib.feedmenews.screens.EmptyScreenContent
 import org.galib.feedmenews.screens.ListViewModel
 import org.galib.feedmenews.screens.MFTopAppBar
@@ -62,7 +62,7 @@ fun HomeScreen(
             MFTopAppBar(scrollBehavior)
         },
         bottomBar = {
-            MFNavigationBar(navController)
+            MFNavigationBar(navController,0)
         }
     ) { paddingValues ->
         Column(

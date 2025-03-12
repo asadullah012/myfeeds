@@ -1,14 +1,13 @@
 package org.galib.feedmenews.screens.foryou
 
-import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
@@ -17,10 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
-import org.galib.feedmenews.navigation.MFNavigationBar
-import org.galib.feedmenews.screens.EmptyScreenContent
-import org.galib.feedmenews.screens.home.ObjectGrid
 import org.galib.feedmenews.screens.ListViewModel
+import org.galib.feedmenews.screens.MFNavigationBar
 import org.galib.feedmenews.screens.MFTopAppBar
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -42,22 +39,13 @@ fun ForYouScreen(
             MFTopAppBar(scrollBehavior)
         },
         bottomBar = {
-            MFNavigationBar(navController)
+            MFNavigationBar(navController, 1)
         }
     ) { paddingValues ->
         Column(
             Modifier.padding(paddingValues)
         ) {
-            AnimatedContent(objects.isNotEmpty()) { objectsAvailable ->
-                if (objectsAvailable) {
-                    ObjectGrid(
-                        objects = objects,
-                        onObjectClick = navigateToDetails,
-                    )
-                } else {
-                    EmptyScreenContent(Modifier.fillMaxSize())
-                }
-            }
+            Text("This will show suggested article")
         }
     }
 

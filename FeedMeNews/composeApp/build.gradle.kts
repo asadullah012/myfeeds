@@ -56,6 +56,7 @@ kotlin {
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.navigation.compose)
             implementation(libs.jb.material.icon)
+            implementation(libs.napier)
         }
     }
 }
